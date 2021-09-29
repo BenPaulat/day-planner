@@ -37,20 +37,31 @@ var logFunction = function() {
 };
 
 // create save buttons
-var buttonList = $('.saveBtn');
-buttonList.forEach((x) => {
-    if (typeof x === "object") {
-      document.getElementById(x.id).addEventListener("click", logFunction());
-    }
+//var targetEl = event.target;
+var btn1El = document.getElementById('#btn1');
+btn1El.addEventListener('click', logFunction());
+var btn2El = document.getElementById('#btn2');
+var btn3El = document.getElementById('#btn3');
+var btn4El = document.getElementById('#btn4');
+var btn5El = document.getElementById('#btn5');
+var btn6El = document.getElementById('#btn6');
+var btn7El = document.getElementById('#btn7');
+var btn8El = document.getElementById('#btn8');
+var btn9El = document.getElementById('#btn9');
+var btn10El = document.getElementById('#btn10');
 
-//for (var i = 0 ; i < buttonList.length; i++) {
-    //buttonList[i].addEventListener('click', logFunction());
- //}
+if (targetEl.matches(btn1El) || targetEl.matches(btn2El) || targetEl.matches(btn3El) || targetEl.matches(btn4El) || targetEl.matches(btn5El) || targetEl.matches(btn6El) || targetEl.matches(btn7El) || targetEl.matches(btn8El) || targetEl.matches(btn9El) || targetEl.matches(btn10El) ) {
+  console.log("button" + targetEl + "clicked!");
+};
 
+
+for (var i = 0 ; i < buttonList.length; i++) {
+    buttonList[i].addEventListener('click', logFunction());
+ }
 
 // save text to local storage
 function saveText(y) {
     y.preventDefault();
 };
 
-colorizeBlock()
+colorizeBlock();
